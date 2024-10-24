@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Enter student details</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label for="sid">Student ID</label>
+            <select name="sid" id="sid">
+                {% for i in sco %}
+                <option value="{{i.student_id}}">{{i.student_id}}</option>
+                {% endfor %}
+            </select><br>
+           
+            <label for="sn">Student Name</label>
+            <input type="text" id="sn" name="sn"><br>
+            <label for="ss">Student Section</label>
+            <input type="text" id="ss" name="ss"><br>
+            
+            <label for="se">srudent Email</label>
+            <input type="text" name="se" id="se"><br>
+            <input type="submit">
+        </form>
+    </center>
+</body>
+</html>
